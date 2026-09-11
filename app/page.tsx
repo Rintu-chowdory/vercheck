@@ -1,47 +1,61 @@
-export default function Page() {
+import { HeroSection } from "@/components/hero-section"
+import { DashboardPreview } from "@/components/dashboard-preview"
+import { SocialProof } from "@/components/social-proof"
+import { BentoSection } from "@/components/bento-section"
+import { LargeTestimonial } from "@/components/large-testimonial"
+import { PricingSection } from "@/components/pricing-section"
+import { TestimonialGridSection } from "@/components/testimonial-grid-section"
+import { FAQSection } from "@/components/faq-section"
+import { CTASection } from "@/components/cta-section"
+import { FooterSection } from "@/components/footer-section"
+import { AnimatedSection } from "@/components/animated-section"
+
+export default function LandingPage() {
   return (
-    <main
-      style={{
-        colorScheme: 'light dark',
-        position: 'relative',
-        display: 'flex',
-        minHeight: '100vh',
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: 'light-dark(#fff, #000)',
-        color: 'light-dark(#000, #fff)',
-      }}
-    >
-      <svg
-        aria-hidden="true"
-        style={{ width: 80, height: 80 }}
-        width={80}
-        height={80}
-        fill="none"
-        viewBox="0 0 20 20"
-        xmlns="http://www.w3.org/2000/svg"
-        stroke="currentColor"
-        strokeWidth="0.5"
-      >
-        <path
-          d="M14.2 14.2H17V6.9375C17 4.76288 15.2371 3 13.0625 3H5.8V5.8M14.2 14.2V7.79063L7.79062 14.2H14.2ZM14.2 14.2V17H6.9375C4.76288 17 3 15.2371 3 13.0625V5.8H5.8M5.8 5.8V12.2313L12.2313 5.8H5.8Z"
-          strokeLinejoin="round"
-        />
-      </svg>
-      <p
-        style={{
-          position: 'absolute',
-          left: '50%',
-          top: 'calc(50% + 56px)',
-          transform: 'translateX(-50%)',
-          whiteSpace: 'nowrap',
-          fontSize: '14px',
-          fontWeight: 500,
-          color: 'light-dark(#71717a, #a1a1aa)',
-        }}
-      >
-        Your v0 generation will show here.
-      </p>
-    </main>
+    <div className="min-h-screen bg-background relative overflow-hidden pb-0">
+      <div className="relative z-10">
+        <main className="max-w-[1320px] mx-auto relative">
+          <HeroSection />
+          {/* Dashboard Preview Wrapper */}
+          <div className="absolute bottom-[-150px] md:bottom-[-400px] left-1/2 transform -translate-x-1/2 z-30">
+            <AnimatedSection>
+              <DashboardPreview />
+            </AnimatedSection>
+          </div>
+        </main>
+        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-6 mt-[411px] md:mt-[400px]" delay={0.1}>
+          <SocialProof />
+        </AnimatedSection>
+        <AnimatedSection id="features-section" className="relative z-10 max-w-[1320px] mx-auto mt-16" delay={0.2}>
+          <BentoSection />
+        </AnimatedSection>
+        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto mt-8 md:mt-16" delay={0.2}>
+          <LargeTestimonial />
+        </AnimatedSection>
+        <AnimatedSection
+          id="pricing-section"
+          className="relative z-10 max-w-[1320px] mx-auto mt-8 md:mt-16"
+          delay={0.2}
+        >
+          <PricingSection />
+        </AnimatedSection>
+        <AnimatedSection
+          id="testimonials-section"
+          className="relative z-10 max-w-[1320px] mx-auto mt-8 md:mt-16"
+          delay={0.2}
+        >
+          <TestimonialGridSection />
+        </AnimatedSection>
+        <AnimatedSection id="faq-section" className="relative z-10 max-w-[1320px] mx-auto mt-8 md:mt-16" delay={0.2}>
+          <FAQSection />
+        </AnimatedSection>
+        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto mt-8 md:mt-16" delay={0.2}>
+          <CTASection />
+        </AnimatedSection>
+        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto mt-8 md:mt-16" delay={0.2}>
+          <FooterSection />
+        </AnimatedSection>
+      </div>
+    </div>
   )
 }
