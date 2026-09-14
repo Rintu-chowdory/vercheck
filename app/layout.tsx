@@ -7,9 +7,9 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Pointer | AI agents for effortless coding',
-  description: 'Accelerate development with intelligent AI agents that write, review, and optimize your code.',
-  generator: 'Pointer',
+  title: 'Vercheck',
+  description: 'Vercheck.',
+  generator: 'v0 app',
   icons: {
     icon: [
       {
